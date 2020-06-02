@@ -24,7 +24,7 @@
 
 情境：首次購買
 通知：INITIAL_BUY
-```json
+```
 {
 latest_receipt_info: {
     purchase_date_ms: String //訂閱日
@@ -37,7 +37,7 @@ latest_receipt_info: {
 
 情境：用戶升級
 通知：CANCEL -> INTERACTIVE_RENEWAL 
-```json
+```
 {
 latest_receipt_info: {
     purchase_date_ms: String //訂閱日
@@ -50,7 +50,7 @@ latest_receipt_info: {
 
 情境：用戶重新訂閱
 通知：INTERACTIVE_RENEWAL
-```json
+```
 {
 latest_receipt_info: {
     purchase_date_ms: String //訂閱日
@@ -62,7 +62,7 @@ latest_receipt_info: {
 ```
 通知：DID_CHANGE_RENEWAL_STATUS
 
-```json
+```sh
 {
 auto_renew_status_change_date_ms: String
 auto_renew_status: String
@@ -76,7 +76,7 @@ latest_receipt_info: {
 情境：用戶關閉自動續訂功能
 通知：DID_CHANGE_RENEWAL_STATUS
 
-```json
+```
 {
 auto_renew_status_change_date_ms: String //狀態更改日期
 auto_renew_status: String //是否關閉自動續訂
@@ -89,7 +89,7 @@ latest_receipt_info: {
 
 情境：用戶降級
 通知：DID_CHANGE_RENEWAL_PREF
-```json
+```
 {
 auto_renew_product_id: String // 下一次訂閱生效的產品id
 latest_receipt_info: {
@@ -100,7 +100,7 @@ latest_receipt_info: {
 
 情境：用戶取消申請退款/用戶升級
 通知：CANCEL
-```json
+```
 {
 cancellation_date_ms: String // 取消日期
 latest_receipt_info: {
@@ -113,7 +113,7 @@ latest_receipt_info: {
 情境：用戶第一次續訂失敗
 通知：DID_FAIL_TO_RENEW
 
-```json
+```
 {
 pending_renewal_info: {
     is_in_billing_retry_period: String // 是不是正在Apple嘗試扣款的期間
@@ -128,7 +128,7 @@ latest_receipt_info: {
 情境：用戶續訂失敗後, 又成功扣款續訂（在is_in_billing_retry_period期間）
 通知：DID_RECOVER
 
-```json
+```
 {
 latest_receipt_info: {
     original_transaction_id: String //此訂閱者的訂閱的唯一標識符
@@ -141,7 +141,7 @@ latest_receipt_info: {
 情境：用戶是否同意漲價/一更動價格時/ 當用戶進入價格調漲流程時
 通知：PRICE_INCREASE_CONSENT
 
-```json
+```
 // 當一更動價格時, 會馬上發出這個通知, 則price_consent_status都會是flase(代表用戶尚未回覆)
 {
 pending_renewal_info: {
